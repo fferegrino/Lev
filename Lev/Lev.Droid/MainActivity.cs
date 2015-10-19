@@ -5,13 +5,18 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Lev.Portable;
 
 namespace Lev.Droid
 {
     [Activity(Label = "Lev.Droid", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity
     {
-        int count = 1;
+
+		Button botonCalcula;
+		EditText palabra1;
+		EditText palabra2;
+		TextView labelResultado;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -20,11 +25,20 @@ namespace Lev.Droid
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
+			botonCalcula = FindViewById<Button> (Resource.Id.botonCalcula);
+			palabra1 = FindViewById<EditText> (Resource.Id.palabra1);
+			palabra2 = FindViewById<EditText> (Resource.Id.palabra2);
+			labelResultado = FindViewById<TextView> (Resource.Id.labelResultado);
 
-            button.Click += delegate { button.Text = string.Format("{0} clicks!", count++); };
+			botonCalcula.Click += (sender,  e) => {
+				string p1 = palabra1.Text;
+				string p2 = palabra2.Text;
+
+				int resultado = AlgoritmoPortable.Compute(p1,p2);
+
+				labelResultado.Text = resultado.ToString();
+			};
+
         }
     }
 }

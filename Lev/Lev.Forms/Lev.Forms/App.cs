@@ -35,7 +35,15 @@ namespace Lev.Forms
             labelResultado.Text = "0";
             layout.Children.Add(labelResultado);
 
-            MainPage = layout;
+
+			ContentPage pagina = new ContentPage ();
+			pagina.Content = layout;
+
+			if (Device.OS == TargetPlatform.iOS) {
+				layout.Padding = new Thickness (0, 20, 0, 0);
+			}
+
+			MainPage =pagina;
 
         }
 

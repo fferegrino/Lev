@@ -30,10 +30,6 @@ namespace Lev.iOS
 		[GeneratedCode ("iOS Designer", "1.0")]
 		UILabel resultadoLabel { get; set; }
 
-		[Action ("UIButton5_TouchUpInside:")]
-		[GeneratedCode ("iOS Designer", "1.0")]
-		partial void UIButton5_TouchUpInside (UIButton sender);
-
 		void ReleaseDesignerOutlets ()
 		{
 			if (botonCalcula != null) {

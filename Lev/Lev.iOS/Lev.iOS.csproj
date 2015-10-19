@@ -109,7 +109,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Lev.Portable\Lev.Portable.csproj">
-      <Project>{d841bc01-b7de-40c2-9886-781b1c4e8d48}</Project>
+      <Project>{D841BC01-B7DE-40C2-9886-781B1C4E8D48}</Project>
       <Name>Lev.Portable</Name>
     </ProjectReference>
   </ItemGroup>
